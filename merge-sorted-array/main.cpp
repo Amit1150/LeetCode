@@ -11,8 +11,8 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n)
         int num1 = nums1[i];
         int num2 = nums2[j];
         
-        if(num1 < num2) {
-            i = i <m? ++i : i ;
+        if(num1 < num2 & num1 != 0) {
+            i = i < ++i : i ;
         }else if(num1 < num2) {
             nums1.insert(nums1.begin()+ i, nums2[j]);
             j = j < n ? ++j : j;
