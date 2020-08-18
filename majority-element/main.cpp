@@ -4,21 +4,43 @@
 using namespace std;
 int majorityElement(vector<int>& nums)
 {
-    const int size = nums.size() - 1;
     int output = nums[0];
     int count = 1;
-    for(int i = 1; i <= size; i++) {
-        if(nums[i] == output)
+    for(int n : nums) {
+        if(n == output)
             count++;
         else
             count--;
 
         if(count == 0) {
-            output = nums[i];
+            output = n;
             count = 1;
         }
     }
     return output;
+}
+
+int majorityElement(vector<int>& nums) {
+    unordered_map<int,int> m;
+    for(int i=0;i<nums.size();i++)
+    {
+        m[nums[i]]++;
+    }
+    
+    for(auto itr: m.begin(); itr != m.end(); itr++) {
+        if(itr->second > nums.size()/2) {
+            return ite-> first
+        }
+    }
+    
+    for(auto itr=m.begin();itr!=m.end();itr++)
+    {
+        if(itr->second>nums.size()/2)
+        {
+            return itr->first;
+        }
+    }
+    return 0;
 }
 
 int main()
